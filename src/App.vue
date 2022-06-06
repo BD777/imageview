@@ -1,5 +1,6 @@
 <template>
   <div>{{ data.a }}</div>
+  <n-button>123</n-button>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
@@ -9,11 +10,13 @@ import { reactive } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import { invoke } from '@tauri-apps/api/tauri'
 import { dialog } from '@tauri-apps/api'
+import { NButton } from 'naive-ui'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    NButton
   },
   setup () {
     const data = reactive({
@@ -21,12 +24,12 @@ export default {
     })
 
     console.log('dialog', dialog)
-    dialog.open({
-      title: '选择图片目录',
-      directory: true
-    }).then(res => {
-      console.log('选择目录结果', res)
-    })
+    // dialog.open({
+    //   title: '选择图片目录',
+    //   directory: true
+    // }).then(res => {
+    //   console.log('选择目录结果', res)
+    // })
 
     invoke('hello', {
       a: 1,

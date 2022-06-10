@@ -8,8 +8,9 @@
 
 <script>
 import { reactive } from 'vue'
-import { invoke } from '@tauri-apps/api/tauri'
+// import { invoke } from '@tauri-apps/api/tauri'
 import { dialog } from '@tauri-apps/api'
+import $backend from './backend'
 
 export default {
   name: 'App',
@@ -21,6 +22,7 @@ export default {
     })
 
     console.log('dialog', dialog)
+    console.log('backend', $backend)
     // dialog.open({
     //   title: '选择图片目录',
     //   directory: true
@@ -28,14 +30,27 @@ export default {
     //   console.log('选择目录结果', res)
     // })
 
-    invoke('hello', {
-      a: 1,
-      b: '23'
-    }).then(res => {
-      console.log('succ', res)
-    }, err => {
-      console.error('error', err)
+    $backend.initTable().then(res => {
+      console.log('initTable', res)
     })
+
+    $backend.getImagesMetaList(1, 10).then(res => {
+      console.log('getImagesMetaList', res)
+    })
+
+    // invoke('hello', {
+    //   a: 1,
+    //   b: '23'
+    // }).then(res => {
+    //   console.log('succ', res)
+    // }, err => {
+    //   console.error('error', err)
+    // })
+    // $backend.hello(1, '23').then(res => {
+    //   console.log('succ', res)
+    // }, err => {
+    //   console.error('error', err)
+    // })
 
     return {
       data

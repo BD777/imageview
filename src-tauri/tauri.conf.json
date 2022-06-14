@@ -7,8 +7,8 @@
     "distDir": "Set automatically by Vue CLI plugin"
   },
   "package": {
-    "productName": "imageview",
-    "version": "0.1.0"
+    "productName": "ImageView",
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -34,7 +34,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "imageview",
+      "identifier": "ImageView",
       "longDescription": "",
       "macOS": {
         "entitlements": null,

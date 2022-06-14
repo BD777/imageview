@@ -6,7 +6,9 @@
 
   <n-config-provider :theme="theme">
     <n-message-provider>
-      <router-view></router-view>
+      <n-scrollbar style="max-height: 100vh;">
+        <router-view></router-view>
+      </n-scrollbar>
     </n-message-provider>
     <n-global-style />
   </n-config-provider>
@@ -17,14 +19,15 @@ import { ref } from 'vue'
 // import { invoke } from '@tauri-apps/api/tauri'
 // import { dialog } from '@tauri-apps/api'
 import $backend from './backend'
-import { darkTheme, NConfigProvider, NGlobalStyle, NMessageProvider } from "naive-ui"
+import { darkTheme, NConfigProvider, NGlobalStyle, NMessageProvider, NScrollbar } from "naive-ui"
 
 export default {
   name: 'App',
   components: {
     NConfigProvider,
     NGlobalStyle,
-    NMessageProvider
+    NMessageProvider,
+    NScrollbar
   },
   setup () {
     $backend.initTable().then(res => {

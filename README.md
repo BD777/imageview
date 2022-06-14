@@ -14,6 +14,7 @@ A image viewer by tauri.
 
 ## 使用
 ### 1. 直接去release下载，打开，一气呵成。
+[去release页下载](https://github.com/BD777/imageview/releases)
 
 ### 2. 我要自己编译
  - 照着这份 [tauri环境要求](https://tauri.studio/v1/guides/getting-started/prerequisites) 所说的去做

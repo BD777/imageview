@@ -1,6 +1,6 @@
 {
   "name": "imageview",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,17 +13,20 @@
     "@tauri-apps/api": "^1.0.0-rc.6",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.15",
+    "vue3-lazyload": "^0.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@vicons/ionicons5": "^0.12.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "naive-ui": "^2.30.0",
+    "vfonts": "^0.0.3",
     "vue-cli-plugin-tauri": "~1.0.0-rc.3"
   },
   "eslintConfig": {

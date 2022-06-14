@@ -3,57 +3,40 @@
   <n-button>123</n-button>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <router-view></router-view>
+
+  <n-config-provider :theme="theme">
+    <n-message-provider>
+      <router-view></router-view>
+    </n-message-provider>
+    <n-global-style />
+  </n-config-provider>
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 // import { invoke } from '@tauri-apps/api/tauri'
-import { dialog } from '@tauri-apps/api'
+// import { dialog } from '@tauri-apps/api'
 import $backend from './backend'
+import { darkTheme, NConfigProvider, NGlobalStyle, NMessageProvider } from "naive-ui"
 
 export default {
   name: 'App',
   components: {
+    NConfigProvider,
+    NGlobalStyle,
+    NMessageProvider
   },
   setup () {
-    const data = reactive({
-      a: 1
-    })
-
-    console.log('dialog', dialog)
-    console.log('backend', $backend)
-    // dialog.open({
-    //   title: '选择图片目录',
-    //   directory: true
-    // }).then(res => {
-    //   console.log('选择目录结果', res)
-    // })
-
     $backend.initTable().then(res => {
       console.log('initTable', res)
     })
 
-    $backend.getImagesMetaList(1, 10).then(res => {
-      console.log('getImagesMetaList', res)
-    })
-
-    // invoke('hello', {
-    //   a: 1,
-    //   b: '23'
-    // }).then(res => {
-    //   console.log('succ', res)
-    // }, err => {
-    //   console.error('error', err)
-    // })
-    // $backend.hello(1, '23').then(res => {
-    //   console.log('succ', res)
-    // }, err => {
-    //   console.error('error', err)
-    // })
+    let theme = ref(null)
+    theme = darkTheme
 
     return {
-      data
+      darkTheme,
+      theme
     }
   }
 }

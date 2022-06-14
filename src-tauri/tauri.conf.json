@@ -12,7 +12,12 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "all": true,
+      "protocol": {
+        "asset": true,
+        "all": true,
+        "assetScope": ["*"]
+      }
     },
     "bundle": {
       "active": true,
@@ -29,7 +34,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "imageview",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -48,7 +53,7 @@
       }
     },
     "security": {
-      "csp": null
+      "csp": "default-src asset: blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
     },
     "updater": {
       "active": false
@@ -58,7 +63,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "ImageView",
+        "title": "ImageView | 图阅",
         "width": 800
       }
     ]

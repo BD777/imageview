@@ -58,6 +58,7 @@ name = "app"
 version = "0.1.0"
 dependencies = [
  "chrono",
+ "dire",
  "serde",
  "serde_json",
  "serde_with",
@@ -557,6 +558,15 @@ checksum = "f2fb860ca6fafa5552fb6d0e816a69c8e49f0908bf524e30a90d97c85892d506"
 dependencies = [
  "block-buffer",
  "crypto-common",
+]
+
+[[package]]
+name = "dire"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c4b26f17efd803617f268d78995f801979c7a3e0e8883006fe58f866435c6c2a"
+dependencies = [
+ "winapi",
 ]
 
 [[package]]

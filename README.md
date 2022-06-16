@@ -22,6 +22,9 @@ A image viewer by tauri.
  - ```npm run tauri:build```
  - 然后大概会在`src-tauri/target`里获得可执行文件
 
+## 已知问题
+ - `dire`在`osx`下貌似有bug，须手动将`osx.rs:26`的`let mut config_home = path;`改为`let mut config_home = path.clone();`方能编译通过。
+
 ## 鸣谢 Thx
  - [tauri](https://tauri.studio/)
  - [NaiveUI](https://www.naiveui.com/zh-CN/os-theme) // 很合我口味

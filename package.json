@@ -2,6 +2,8 @@
   "name": "imageview",
   "version": "1.0.0",
   "private": true,
+  "author": "windeng",
+  "license": "Apache License 2.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
